@@ -1,0 +1,47 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Mr+Dafoe);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:900);
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+@import url(https://fonts.googleapis.com/css?family=Candal);
+
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+@import url(https://fonts.googleapis.com/css?family=Monoton);
+
+
+body { background: #000; color: #fff; }
+
+#wrapper{
+    margin-left: 500px;
+}
+
+
+.font {
+    /* position: relative; */
+    font-family: 'Permanent Marker', cursive;
+    font-variant:small-caps;
+    font-size: 180px;
+    padding-left: 50px;
+    background-image: -webkit-linear-gradient(#FF0FF8 0%,  #F9F9F7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    -webkit-filter: drop-shadow(2px 2px 20px #f008b7);
+  }
+  
+  #container{
+      border: 5px solid #FF0FF8;
+      text-align: center;
+      margin-left: 40%;
+      margin-right: 40%;
+      padding-top: 10px;
+      padding-bottom:20px;
+  }
+
+  #directions-text{
+      font-size: larger;
+      padding-bottom: 10px;
+      text-underline-position: below #FF0FF8;
+  }
+  
