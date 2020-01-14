@@ -33,26 +33,60 @@ var answerDashes = [];
 
 document.onkeyup= function(event){
     var userGuess = event.key;
-   
-  
-    var letterIndex = movieNames.indexOf(userGuess);
-    if (letterIndex !== -1){ 
-    //    alert("GREAT SCOTT! THATS CORRECT!")  
-       
-       
-       var array = blankMovieName.split("");
-       array.splice(letterIndex,1,movieNames[letterIndex])
-       blankMovieName = array.join("");
-        
+    var delorian = false;
+    if (!guess.includes(userGuess)){
+        guess.push(userGuess);
+        guessed.innerHTML = guess.join(" ");
+        delorian = true;
     }
 
-    else{
-        alert("OUCH THATS HEAVY... WRONG ANSWER!")
-    } 
+    if (movieName.includes(userGuess)) {
+        for (var j = 0; j < movieName.length; j++) {
+            if (movieName[j] === userGuess) {
+                answerDashes[j] = userGuess;
+              
+            } 
+    
+            marty.innerHTML = answerDashes.join(" ");
+        }
+        if (guessesRemaining > 0 && (!answerDashes.includes("_"))) {
+            alert("Totally Tubular! You Won!");
+            wins++;
+            docBrown.innerHTML = wins;
+        } 
+    } else {
+        if (didPush) {
+            guessesRemaining--;
+        }
+    }
+    remainingGuesses.innerHTML = guessesRemaining;
+
+    if (guessesRemaining == 0){
+        marty.innerHTML = movieName;
+        alert("Gag Me With a Spoon! You got it Wrong!")
+    }
+    
+    
+    // document.getElementById("userGuess").innerHTML += userGuess;
+  
+    // var letterIndex = movieNames.indexOf(userGuess);
+    // if (letterIndex !== -1){ 
+    // //    alert("GREAT SCOTT! THATS CORRECT!")  
+       
+       
+    //    var array = blankMovieName.split("");
+    //    array.splice(letterIndex,1,movieNames[letterIndex])
+    //    blankMovieName = array.join("");
+        
+    // }
+
+    // else{
+    //     alert("OUCH THATS HEAVY... WRONG ANSWER!")
+    // } 
    
 
     
-     document.getElementById("userGuess").innerHTML += userGuess;
+     
     
 }
 
