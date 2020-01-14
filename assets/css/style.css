@@ -33,6 +33,7 @@ body { background: #000; color: #fff; }
   #container{
       border: 5px solid #FF0FF8;
       text-align: center;
+      margin-top: 100px;
       margin-left: 40%;
       margin-right: 40%;
       padding-top: 10px;

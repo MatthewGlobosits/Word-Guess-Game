@@ -1,26 +1,49 @@
 var userChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var movieName ="footloose";
-var guess = 0;
+var movieNames = ["backtothefuture", "footloose","thegoonies","topgun"];
+
 var blankMovieName = "_________";
 // var randNum = Math.floor(Math.random() * movieNames.lenght);
 // var chooseWord = [randNum];
 // var underScore = [blankMovieNames]
 
 var userChoiceText = document.getElementById("userGuess");
+var movieName = movieNames[Math.floor(Math.random() * movieNames.length)];
+console.log(movieName)
+var answerDashes = [];
+    for (var i = 0; i < movieName.length; i++) {
+        answerDashes[i] = "_";
+    }
+   console.log(answerDashes)
+
+   var marty = document.getElementById("movie")
+   marty.innerHTML = answerDashes.join(" ");
+
+   var wins = 0;
+   var docBrown = document.getElementById("winCount");
+    docBrown.innerHTML = wins;
+
+  
+    var guessesRemaining = 12;
+    var remainingGuesses = document.getElementById("guessesRemaining");
+    remainingGuesses.innerHTML = guessesRemaining;
+    
+
+    var guess = []
+    var guessed = document.getElementById("userGuess");
 
 document.onkeyup= function(event){
     var userGuess = event.key;
-    // console.log(userGuess)
+   
   
-    var letterIndex = movieName.indexOf(userGuess);
+    var letterIndex = movieNames.indexOf(userGuess);
     if (letterIndex !== -1){ 
     //    alert("GREAT SCOTT! THATS CORRECT!")  
        
        
        var array = blankMovieName.split("");
-       array.splice(letterIndex,1,movieName[letterIndex])
+       array.splice(letterIndex,1,movieNames[letterIndex])
        blankMovieName = array.join("");
-        console.log(blankMovieName)
+        
     }
 
     else{
@@ -30,7 +53,7 @@ document.onkeyup= function(event){
 
     
      document.getElementById("userGuess").innerHTML += userGuess;
-
+    
 }
 
 
