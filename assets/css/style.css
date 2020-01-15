@@ -41,8 +41,9 @@ body { background: #000; color: #fff; }
 
   #directions-text{
       font-size: larger;
+      font-weight: bold;
       padding-bottom: 10px;
-      text-underline-position: below #FF0FF8;
+      text-decoration: underline #FF0FF8 ;
       margin-top:10px ;
   }
   

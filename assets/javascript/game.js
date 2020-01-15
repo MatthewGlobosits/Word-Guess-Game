@@ -9,14 +9,14 @@ var blankMovieName = "_________";
 var userChoiceText = document.getElementById("userGuess");
 var movieName = movieNames[Math.floor(Math.random() * movieNames.length)];
 console.log(movieName)
-var answerDashes = [];
+var dashes = [];
     for (var i = 0; i < movieName.length; i++) {
-        answerDashes[i] = "_";
+        dashes[i] = "_";
     }
-   console.log(answerDashes)
+   console.log(dashes)
 
    var marty = document.getElementById("movie")
-   marty.innerHTML = answerDashes.join(" ");
+   marty.innerHTML = dashes.join(" ");
 
    var wins = 0;
    var docBrown = document.getElementById("winCount");
@@ -43,19 +43,21 @@ document.onkeyup= function(event){
     if (movieName.includes(userGuess)) {
         for (var j = 0; j < movieName.length; j++) {
             if (movieName[j] === userGuess) {
-                answerDashes[j] = userGuess;
+                dashes[j] = userGuess;
               
             } 
     
-            marty.innerHTML = answerDashes.join(" ");
+            marty.innerHTML = dashes.join(" ");
         }
-        if (guessesRemaining > 0 && (!answerDashes.includes("_"))) {
+        if (guessesRemaining > 0 && (!dashes.includes("_"))) {
             alert("Totally Tubular! You Won!");
+            var audio = new Audio("Hip-to-be-Square.mp3");
+        audio.play();
             wins++;
             docBrown.innerHTML = wins;
         } 
     } else {
-        if (didPush) {
+        if (delorian) {
             guessesRemaining--;
         }
     }
